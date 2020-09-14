@@ -7,7 +7,10 @@ I will share my solution of LeetCode problem to this page aperiodically. All of 
 
 | #  | Title | Diffculty |
 | --- | --- | --- |
+| 2  | Add Two Numbers | Medium |
+| 3  | Longest Substring Without Repeating Characters  | Medium |
 | 4  | Median of Two Sorted Arrays  | Hard |
+| 5  | Longest Palindromic Substring  | Medium |
 | 57  | Insert Interval  | Hard |
 | 72  | Edit Distance | Hard |
 | 128  | Longest Consecutive Sequnce | Hard |
