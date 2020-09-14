@@ -1,6 +1,7 @@
 # Leetcode
 ### Solution of LeetCode Problem in Python
 This is my profile on leetcode: https://leetcode.com/pongpongccc/
+
 I will share my solution of LeetCode problem to this page aperiodically. All of the solution are coded in python.
 
 
