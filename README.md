@@ -16,3 +16,4 @@ I will share my solution of LeetCode problem to this page aperiodically. All of 
 | 128  | Longest Consecutive Sequnce | Hard |
 | 154  | Find Minimum in Rotated Sorted Array II | Hard |
 | 1582  | Special Positions in a Binary Matrix  | Easy |
+| 1291  | Sequential Digits  | Medium |
