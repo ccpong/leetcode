@@ -1,0 +1,47 @@
+```
+class Solution:
+    def sequentialDigits(self, low: int, high: int) -> List[int]:
+        res=[]
+        min_digit=len(str(low))
+        for digit in range(min_digit,11):
+            for first_digit in range(1,11-digit):
+                next_output=[]
+                for add_on in range(0,digit):
+                    next_output.append(str(add_on+first_digit))
+                next_num=int(''.join(next_output))
+                if next_num<low: continue
+                elif next_num>high: return res
+                else: res.append(next_num)
+        return res
+```
+
+In this problem, we need to print a sorted list of Sequential Digits between low and high.
+The output will be something like:
+`[ 12, 23, 34... 1234,2345,3456]`
+There for, we create a empty list to contain the outputs.
+`res=[]`
+To sort a list like this in a fast way, we can first sorted it by the digit, and then by the number of first digit.
+In and other word, to print a list like this, we can print it from those number with lesser digit, and then the higher digit. It will be our first for loop. The start point of the loop will be the number of digit of given input ‘low’, because every number with a lower digit then the ‘low’ must be small than ‘low’. The end point will be digit 10, as the question mentioned that high <= 10^9. Therefore, the loop will look like this:
+for digit in range(min_digit,10):
+
+After that, in our loop, for each number we need to output, it will start by a number in range(1, 10-(number of digit)), 
+e.g.`[ 123, 234, 345….. 789,  1234….6789, 12345……]`
+e.g. For numbers with 3 digit, the minimum first digit is 1, the maximum first digit is 7, which is 10-3.
+For numbers with 4 digit, the minimum first digit is 1, the maximum first digit is 6, which is 10-4.
+
+When we considered the first digit of the next output, we can figure it out by a for loop.
+```
+next_output=[]
+for add_on in range(0,digit):
+	next_output.append(str(add_on+first_digit))
+next_num=int(''.join(next_output))  
+```
+for example, for numbers with 3 digits, we consider a output which first digit is 5, the number is like:
+[ 5,(5+1),(5+1+1)]
+=[5,6,7]
+=567
+
+Then we append this number to out result if it’s between low and high. If it <low, we skip it.
+We keep doing it when the number is higher than the required input ‘high’.
+i.e. `elif next_num>high: return res`
+In case the outlayer of the for loop is end, we also return res.
