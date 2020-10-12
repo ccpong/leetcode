@@ -1,0 +1,48 @@
+'''python
+class Solution:
+    def buddyStrings(self, A: str, B: str) -> bool:
+        if len(A)!=len(B): return False
+        A=list(A)
+        B=list(B)
+        dif=0
+        list_of_dif=[]
+        visited=[]
+        for i,j in enumerate(A):
+            if j!=B[i]:
+                dif+=1
+                list_of_dif.append(i)
+                if len(list_of_dif)>2:
+                    return False
+            
+        if len(list_of_dif)==1:
+            return False
+        elif len(list_of_dif)==2:
+            return A[list_of_dif[0]]==B[list_of_dif[1]] and A[list_of_dif[1]]==B[list_of_dif[0]]
+        else:
+            return len(A)!=len(set(A))
+'''
+
+Explanation:
+Consider two string A and B.
+A: [ a , b , c , d , e , f ]
+B: [ a , b , e , d , g , f ]
+We can compare A and B letter by letter to find out the difference of them. In this case, the difference appear in A[2] and A[4]
+
+There are some situation that we should return False:
+1.	The length of A and B is different.
+e.g. ‘aa’ and ‘’ 
+2.	There are One and only One difference between A and B.
+e.g. ‘abcde’ and ‘abcef’
+3.	There are more than 2 differences between A and B.
+e.g. ‘abcd and ‘dcba’
+4.	There are exactly 2 differences between A and B, but we can’t make the strings equal by swapping the differences.
+e.g. ‘abcd and ‘dcba’
+
+For cases that A and B are equal (like ‘aa’ and ‘aa’, ‘ab’ and ‘ab’):
+we consider that whether there are any duplicate letter in A. If yes, we can keep A unchanged by swapping the duplicate letters, so we return True.
+e.g. ‘aa’ and ‘aa’
+If no, we can’t keep A unchanged by swapping the duplicate letters, so we return False.
+e.g. ‘ab’ and ‘ab’
+
+We can check this condition by checking the length of set(A) and A. If length of set(A) is equal to length of A, there are no duplicate letters, we return False
+i.e. if len(set(A)) ==len(A), return False
