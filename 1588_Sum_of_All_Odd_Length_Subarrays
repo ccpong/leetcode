@@ -1,0 +1,18 @@
+class Solution:
+    def sumOddLengthSubarrays(self, arr: List[int]) -> int:
+        def sumofSub(arr,n):
+            res=[]
+            low=0
+            high=low+n-1
+            while high<len(arr):
+                res.append(sum(arr[low:high+1]))
+                low+=1
+                high+=1
+            return res
+        
+        L=len(arr)
+        res=[]
+        if L<3: return sum(arr)
+        for cur_L in [i for i in range(L+1) if i%2]:
+            res+=sumofSub(arr,cur_L)
+        return sum(res)
