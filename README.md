@@ -15,6 +15,9 @@ I will share my solution of LeetCode problem to this page aperiodically. All of 
 | 72  | Edit Distance | Hard |
 | 128  | Longest Consecutive Sequnce | Hard |
 | 154  | Find Minimum in Rotated Sorted Array II | Hard |
+| 495  | Teemo Attacking | Medium |
+| 859  | Buddy Strings | Easy |
 | 1137  | N-th Tribonacci Number | Easy |
 | 1291  | Sequential Digits  | Medium |
 | 1582  | Special Positions in a Binary Matrix  | Easy |
+| 1588  |  Sum of All Odd Length Subarrays  | Easy |
